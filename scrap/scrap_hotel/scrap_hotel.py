@@ -37,7 +37,7 @@ class ScrapHotel:
         return hotel_data
 
     def get_room_info(self):
-        chars = "[]','"
+
         options = webdriver.ChromeOptions()
         options.add_argument('--ignore-certificate-errors')
         options.add_argument('--incognito')
@@ -74,9 +74,9 @@ class ScrapHotel:
 
             room_amenities['room_name'] = link.text
             room_amenities['photo_room'] = str(photo_room).translate({ord(i): None for i in "[',]"})
-            room_amenities['bathroom'] = str(equipment_bathroom).translate({ord(i): None for i in chars}).replace('\\n', ',')
-            room_amenities['room_view_title'] = str(room_view).translate({ord(i): None for i in chars}).replace('\\n', ',')
-            room_amenities['equipment_title'] = str(equipment_room).translate({ord(i): None for i in chars}).replace('\\n', ',')
+            room_amenities['bathroom'] = str(equipment_bathroom).translate({ord(i): None for i in "[]','"}).replace('\\n', ',')
+            room_amenities['room_view_title'] = str(room_view).translate({ord(i): None for i in "[]','"}).replace('\\n', ',')
+            room_amenities['equipment_title'] = str(equipment_room).translate({ord(i): None for i in "[]','"}).replace('\\n', ',')
             room.append(room_amenities)
             time.sleep(1)
             driver.find_element_by_class_name('lightbox_close_button').click()
