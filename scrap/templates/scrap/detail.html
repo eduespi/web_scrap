@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+   {% load bootstrap4 %}
+   {% bootstrap_css %}
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td ><b>Hotel Name: </b></td>
+            <td><b>{{ hotel.name_hotel }}</b></td>
+            </tr>
+        <tr>
+             <td >Hotel Address: </td>
+            <td>{{ hotel.address_hotel }} </td>
+         </tr>
+            <tr>
+             <td >Hotel Review: </td>
+            <td>{{ hotel.review_quantities }}</td>
+         </tr>
+        <tr>
+             <td >Hotel Reviews Score: </td>
+            <td>{{ hotel.review_score }}</td>
+         </tr>
+         <tr>
+             <td >Hotel link Photos: </td>
+            <td>{{ hotel.photo_hotel }}</td>
+         </tr>
+{% for room in rooms %}
+    <tr>
+             <td> <b>Hotel Room Name:</b> </td>
+            <td><b>{{ room.roomName }}</b></td>
+         </tr>
+
+    <tr>
+             <td >Hotel Bathroom: </td>
+            <td>{{ room.bathroom }}</td>
+         </tr>
+    <tr>
+             <td >Hotel Equipment: </td>
+            <td>{{ room.equipment_title }}</td>
+         </tr>
+    <tr>
+             <td >Hotel Room View: </td>
+            <td>{{ room.room_view_title }}</td>
+         </tr>
+
+    <tr>
+             <td >Hotel Room Photos: </td>
+            <td>{{ room.photo_room }}</td>
+         </tr>
+
+{% endfor %}
+    </table>
+
+{% bootstrap_javascript jquery='full' %}
+</body>
+</html>

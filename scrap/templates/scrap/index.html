@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Project</title>
+     {% load bootstrap4 %}
+     {% bootstrap_css %}
+</head>
+<body>
+<form action="/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+    <p>ibis-budget-providencia</p>
+</form>
+<hr>
+<p>Registered Data</p>
+<br>
+{% for d in data %}
+    <ul><li><a href="detail/{{ d.id }}">{{ d.name_hotel }}</a></li></ul>
+{% endfor %}
+{% bootstrap_javascript jquery='full' %}
+</body>
+</html>
