@@ -1,2 +1,2 @@
 # web_scrap
-Scrap test using jango
+Scrap test using Django
